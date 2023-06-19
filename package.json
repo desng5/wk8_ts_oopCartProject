@@ -1,5 +1,5 @@
 {
-  "name": "tsapp_oopcart",
+  "name": "tspp_oopcart",
   "version": "1.0.0",
   "description": "Shopping Webpage",
   "main": "index.js",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/desng5/wk8_oop_project#readme",
   "devDependencies": {
+    "@types/uuid": "^9.0.2",
     "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
     "ts-loader": "^9.4.3",
