@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,28 +10,36 @@
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <!-- <nav class="navbar bg-body-tertiary" >
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">Green Planet Shopping</span>
         </div>
-    </nav>
-    <main>
+    </nav> -->
+    <header>
+        <h1>Green Planet Shop</h1>
+    </header>
+
+
+    <main class="forms">
+        
+        <div id="cartContainer">
+            Welcome to the Jungle!
+        </div>
+        
         <div id="loginContainer">
             <form action="" id="loginForm">
                 <div class="mr-3">
                     <input type="text" class="form-control" id="userInput" placeholder="User">
                 </div>
                 <div class="mr-3">
-                    <input type="text" class="form-control" id="emailInput" placeholder="Email">
+                    <input type="email" class="form-control" id="emailInput" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-dar mb-3">Submit</button>
+                    <button type="submit" id="submitBtn" class="btn btn-dark">Submit</button>
+                    <!-- <button type="submit" class="btn btn- mb-3">Submit</button> -->
                 </div>
             </form>
-            <div id="loginText"></div>
-        </div>
-        <div id="cartContainer">
-            Welcome to the Green Planet!
+            <!-- <div id="loginText"></div> -->
         </div>
     </main>
 

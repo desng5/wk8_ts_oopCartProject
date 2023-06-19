@@ -5,7 +5,7 @@ import { idxSign, formatterUSD } from "./types"
 export default class User {
     constructor(
         private _name: string,
-        private _age: number,
+        private _email: string,
         private _cart: Item[] = [],
         private _id: string = uuidv4()
     ){}
@@ -15,11 +15,11 @@ export default class User {
     public set cart(value: Item[]) {
         this._cart = value
     }
-    public get age(): number {
-        return this._age
+    public get email(): string {
+        return this._email
     }
-    public set age(value: number) {
-        this._age = value
+    public set email(value: string) {
+        this._email = value
     }
     public get name(): string {
         return this._name
@@ -35,9 +35,9 @@ export default class User {
     }
 
     // Static Method
-    public static loginInUser = (inputName: string|null, inputAge: string|null): User|undefined => {
-        if (inputName && inputAge) {
-            const loginUser = new User(inputName, parseInt(inputAge))
+    public static loginInUser = (inputName: string|null, inputEmail: string|null): User|undefined => {
+        if (inputName && inputEmail) {
+            const loginUser = new User(inputName, inputEmail)
             return loginUser
         }
         return undefined

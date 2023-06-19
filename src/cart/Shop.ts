@@ -57,14 +57,14 @@ export default class Shop {
     public static loginUser = (e): void => {
         e.preventDefault()
         const userInput = document.getElementById('userInput') as HTMLInputElement
-        const ageInput = document.getElementById('ageInput') as HTMLInputElement
+        const emailInput = document.getElementById('emailInput') as HTMLInputElement
         const cartContainer: HTMLElement = document.getElementById('cartContainer')!
         const loginForm: HTMLElement = document.getElementById('loginForm')!
         const loginText: HTMLElement = document.getElementById('loginText')!
         const disappear: Partial<CSSStyleDeclaration> = { display: 'none' }
         Object.assign(loginForm.style, disappear)
         loginText.innerText = `Welcome, ${userInput.value}! Happy shopping!`
-        Shop.myUser = User.loginInUser(userInput.value, ageInput.value)
+        Shop.myUser = User.loginInUser(userInput.value, emailInput.value)
         Shop.currentCart = new Shop("Regalis", cartContainer)
     }
 
@@ -106,11 +106,14 @@ export default class Shop {
     }
 
     private addDefaultItems = (): void => {
-        this._products.push(new Item("Caviar, 4oz", 480, "Persian Sevruga Caviar"))
-        this._products.push(new Item("Truffle, 1lb", 300, "Italian Summer Black Truffle"))
-        this._products.push(new Item("Uni, 200g", 150, "San Diego Murasaki Uni"))
-        this._products.push(new Item("Wagyu, 20oz", 200, "Kagoshima A5 Wagyu Ribeye"))
-        this._products.push(new Item("Jamon, 10oz", 30, "Iberico de Bellota Jamon"))
-        this._products.push(new Item("Foie Gras", 125, "Fresh Foie Gras Grade A"))
+        this._products.push(new Item("Monstera Deliciosa", 200, "Swiss Cheese Leaves, Indirect sunlight"))
+        this._products.push(new Item("Pothos", 55, "Trailing heart shape leaves, Indirect sunlight"))
+        this._products.push(new Item("Money Tree", 100, "Braided trunck, Low light, Indirect sunlight"))
+        this._products.push(new Item("Bunny Ear Cactus", 35, "Slowing growing desert plant, Direct Sunlight"))
+        this._products.push(new Item("Palm Tree", 85, "Indoor Palm, Indirect sunlight"))
+        this._products.push(new Item("Peace Lilies", 55, "Brilliant white flowers, full sunlight "))
+        this._products.push(new Item("Fiddle Leaf Fig", 150, "Tall, dramatic plant, Sensitive plant"))
+        this._products.push(new Item("Snake", 50, "Sword like leaves, Indirect sunlight"))
+        this._products.push(new Item("Cereis Cactis", 35, "Flowering Cactus, Direct sunlight"))
     }
 }

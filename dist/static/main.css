@@ -1,12 +1,39 @@
 body {
-    background-color: #168416;
+    background-image: url(/dist/static/images/background1.jpg);
+    background-repeat: center no-repeat;
+    background-size: cover ;
+    /* background-color: #185818; */
+    /* background-image: url(/dist/static/images/background1.jpg); */
     font-family:cursive;
     margin: 0;
     box-sizing: border-box;
 }
 
-img {
+h1{
+    margin-left: 30px;
+    margin-top: 20px;
+    color: white;
+
+}
+
+.forms {
+    position: fixed center;
+    margin-top: 40vh;
+}
+/* img {
     width: 100%
+} */
+
+#cartContainer {
+    color:white;
+    margin: 40px auto;
+    margin-bottom: 0;
+    font-size: 30px;
+    width: 60%;
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 #loginContainer {
@@ -23,16 +50,17 @@ img {
     align-content: flex-end;
     justify-content: space-between;
 }
-#loginText {
+
+#emailInput {
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#submitBtn {
+    -webkit-text-fill-color:rgb(130, 142, 155);
+    margin-left: 20px;
+}
+/* #loginText {
     margin: 10px auto;
     width: 300px;
-}
-#cartContainer {
-
-    margin:auto;
-    width: 60%;
-    min-width: 700px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+} */
