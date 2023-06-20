@@ -6,7 +6,7 @@ import { plantCost, formatterUSD } from "./types"
 export default class User {
     constructor(
         private _name: string,
-        private _email: string,
+        private _phone: string,
         private _cart: Item[] = [],
         private _id: string = uuidv4()
     ){}
@@ -17,10 +17,10 @@ export default class User {
         this._cart = value
     }
     public get email(): string {
-        return this._email
+        return this._phone
     }
     public set email(value: string) {
-        this._email = value
+        this._phone = value
     }
     public get name(): string {
         return this._name
@@ -36,9 +36,9 @@ export default class User {
     }
 
     // Static Method 
-    public static loginInUser = (inputName: string|null, inputEmail: string|null): User|undefined => {
-        if (inputName && inputEmail) {
-            const loginUser = new User(inputName, inputEmail)
+    public static loginInUser = (inputName: string|null, inputPhone: string|null): User|undefined => {
+        if (inputName && inputPhone) {
+            const loginUser = new User(inputName, inputPhone)
             return loginUser
         }
         return undefined

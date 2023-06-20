@@ -63,14 +63,14 @@ export default class Shop {
     public static loginUser = (e): void => {
         e.preventDefault();
         const userInput = document.getElementById('userInput') as HTMLInputElement;
-        const emailInput = document.getElementById('emailInput') as HTMLInputElement;
+        const phoneInput = document.getElementById('phoneInput') as HTMLInputElement;
         const cartContainer: HTMLElement = document.getElementById('cartContainer')!;
         const loginForm: HTMLElement = document.getElementById('loginForm')!;
         const loginText: HTMLElement = document.getElementById('loginText')!;
         const disappear: Partial<CSSStyleDeclaration> = { display: 'none' };
         Object.assign(loginForm.style, disappear);
         loginText.innerText = `Welcome, ${userInput.value}! Happy Plant Shopping!`;
-        Shop.myUser = User.loginInUser(userInput.value, emailInput.value);
+        Shop.myUser = User.loginInUser(userInput.value, phoneInput.value);
         Shop.currentCart = new Shop("Greenery", cartContainer);
     };
 
