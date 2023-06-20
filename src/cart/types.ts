@@ -1,4 +1,4 @@
-interface idxSign {
+interface plantCost {
     [key: string]: number
 }
 
@@ -7,4 +7,4 @@ const formatterUSD = new Intl.NumberFormat('en-US', {
     currency: 'USD',
 });
 
-export { idxSign, formatterUSD }
+export { plantCost, formatterUSD }

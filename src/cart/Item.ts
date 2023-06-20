@@ -8,6 +8,7 @@ export default class Item {
         private _desc: string,
         private _id: string = uuidv4()
     ){}
+
     public get desc(): string {
         return this._desc
     }
@@ -48,16 +49,20 @@ export default class Item {
         addToCart.id = `btnAddToCart-${item.id}`
         addToCart.innerText = "Add to Cart"
         div.append(itemNameH3, itemDesc, itemPriceP, addToCart)
+      
         // @ts-ignore
         addToCart.addEventListener('click', (e): void => {
-            e.preventDefault()
-            console.log(Shop.myUser)
+            e.preventDefault();
+            console.log(Shop.myUser); //static propert by
             if (Shop.myUser !== undefined) {
-                Shop.myUser.addToCart(item)
-            } else { 
-                console.log("Can't addEventListener to AddToCart button")
+              Shop.myUser.addToCart(item);
+            } else {
+              console.log("Can't addEventListener to AddToCart button");
             }
-        })
+          });
+
+
+
         const productStyle: Partial<CSSStyleDeclaration> = {
             width: "100%",
             padding: "10px"

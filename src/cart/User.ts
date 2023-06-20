@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid"
 import { Shop, Item } from "./index"
-import { idxSign, formatterUSD } from "./types"
+import { plantCost, formatterUSD } from "./types"
+
 
 export default class User {
     constructor(
@@ -34,7 +35,7 @@ export default class User {
         this._id = value
     }
 
-    // Static Method
+    // Static Method 
     public static loginInUser = (inputName: string|null, inputEmail: string|null): User|undefined => {
         if (inputName && inputEmail) {
             const loginUser = new User(inputName, inputEmail)
@@ -89,20 +90,21 @@ export default class User {
         Shop.refreshCart()
         console.log(`Added 1 ${item.name} to cart.`)
     }
+
     public removeFromCart = (item: Item): void => {
         let countItems: number = 0
         this.cart.forEach(e => e == item ? countItems++ : '')
         for (let i = 0; i < countItems; i++) {
-            let idx = this.cart.indexOf(item)
-            this.cart.splice(idx, 1)
+            let pc = this.cart.indexOf(item)
+            this.cart.splice(pc, 1)
         }
         Shop.refreshCart()
         console.log(`Removed all (${countItems}) ${item.name} from Cart.`)
     }
     public removeQuantityFromCart = (item: Item, qtyRemove: number): void => {
         for (let i = 0; i < qtyRemove; i++) {
-            let idx = this.cart.indexOf(item)
-            this.cart.splice(idx, 1)
+            let pc = this.cart.indexOf(item)
+            this.cart.splice(pc, 1)
         }
         Shop.refreshCart()
         console.log(`Removed ${qtyRemove} ${item.name} from Cart.`)
@@ -112,15 +114,14 @@ export default class User {
         for (let item of this.cart) {
             totalCart += item.price
         }
-        // Optional: Just to know if totalCart is correct
-        // formatterUSD imported from types.ts 
+        
         console.log(`Cart Total: ${formatterUSD.format(totalCart)}`)
         //console.log(`Cart Total: ${totalCart}`)
         return totalCart
     }
     public printCart = (): void => {
-        // idxSign interface imported from types.ts 
-        let cartItems: idxSign = {}
+        // plantCost interface imported from types.ts 
+        let cartItems: plantCost = {}
         for (let cartItem of this.cart) {
             if (cartItem.name in cartItems) {
                 cartItems[cartItem.name] += 1

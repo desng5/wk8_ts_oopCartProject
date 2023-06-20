@@ -1,5 +1,7 @@
-import { Shop } from "./cart/index"
+// import { Shop } from "./cart/index";
 
-const loginForm: HTMLElement = document.getElementById('loginForm')!
+import Shop from "./cart/Shop";
 
-loginForm.addEventListener("submit", Shop.loginUser)
+const loginForm: HTMLElement = document.getElementById('loginForm')!;
+
+loginForm.addEventListener("submit", Shop.loginUser);
