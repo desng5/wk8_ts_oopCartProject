@@ -65,6 +65,8 @@ export default class Shop {
         const userInput = document.getElementById('userInput') as HTMLInputElement;
         const ageInput = document.getElementById('ageInput') as HTMLInputElement;
         const cartContainer: HTMLElement = document.getElementById('cartContainer')!;
+        // const appear: Partial<CSSStyleDeclaration> = {display: 'block'}
+        // Object.assign(cartContainer.style, appear)
         const loginForm: HTMLElement = document.getElementById('loginForm')!;
         const loginText: HTMLElement = document.getElementById('loginText')!;
         const disappear: Partial<CSSStyleDeclaration> = { display: 'none' };
